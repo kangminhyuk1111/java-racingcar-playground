@@ -1,9 +1,11 @@
 package cargame;
 
+import java.util.Random;
+
 public class Car {
 
     private static final int FORWARD_NUMBER = 4;
-    private int position;
+    private int position = 0;
     private final String carName;
 
     public Car(final String carName) {
@@ -22,5 +24,15 @@ public class Car {
         if(randomNo >= FORWARD_NUMBER) {
             position++;
         }
+    }
+
+    public String getDistance() {
+        StringBuilder distance = new StringBuilder();
+
+        for (int i = 0; i < position; i++) {
+            distance.append("-");
+        }
+
+        return distance.toString();
     }
 }

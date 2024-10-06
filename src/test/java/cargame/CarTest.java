@@ -32,4 +32,11 @@ public class CarTest {
         car.move(3);
         assertThat(car.getPosition()).isEqualTo(0);
     }
+
+    @Test
+    void 이동거리_대시로_표현() {
+        car.move(4);
+        car.move(4);
+        assertThat(car.getDistance()).isEqualTo("--");
+    }
 }
