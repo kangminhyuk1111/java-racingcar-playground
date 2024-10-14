@@ -1,13 +1,14 @@
 package cargame;
 
+import cargame.vo.Name;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
 public class CarTest {
 
-    final String name = "k5";
-    final String wrongName = "hyundai";
+    final Name name = new Name("k5");
+    final Name wrongName = new Name("hyundai");
 
     @Test
     void 차량_생성() {
@@ -23,7 +24,21 @@ public class CarTest {
     @Test
     void 차량_이동() {
         final Car car = new Car(name);
-        car.move();
+        car.move(4);
         assertThat(car.getPosition()).isEqualTo(1);
+    }
+
+    @Test
+    void 숫자가_3이상이면_차량_이동() {
+        final Car car = new Car(name);
+        car.move(4);
+        assertThat(car.getPosition()).isEqualTo(1);
+    }
+
+    @Test
+    void 숫자가_3이하면_차량_정지() {
+        final Car car = new Car(name);
+        car.move(3);
+        assertThat(car.getPosition()).isEqualTo(0);
     }
 }

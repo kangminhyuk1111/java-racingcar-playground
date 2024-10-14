@@ -1,28 +1,23 @@
 package cargame;
 
+import cargame.vo.Name;
+import cargame.vo.Position;
+
 public class Car {
 
-    private final String name;
-    private int position;
+    private final Name name;
+    private Position position;
 
-    public Car(final String name) {
-        if (name.isEmpty() || name.length() > 5) {
-            throw new IllegalArgumentException("글자수는 0자리이상 5자리 이하로 제한합니다");
-        }
-
+    public Car(final Name name) {
         this.name = name;
-        this.position = 0;
+        this.position = new Position(0);
     }
 
-    public String getName() {
+    public Name getName() {
         return this.name;
     }
 
-    public int getPosition() {
-        return this.position;
-    }
-
-    public void move() {
-        position++;
+    public void move(final int no) {
+        position.move(no);
     }
 }
