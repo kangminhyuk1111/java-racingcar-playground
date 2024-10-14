@@ -8,15 +8,11 @@ public class Position {
         this.position = position;
     }
 
-    public int getPosition() {
-        position = position + 1;
-        return position;
-    }
-
-    public void move(final int no) {
+    public int move(final int no) {
         if (no < 4) {
-            return;
+            return position;
         }
-        position++;
+
+        return ++position;
     }
 }

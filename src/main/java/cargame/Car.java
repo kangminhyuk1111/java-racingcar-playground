@@ -17,7 +17,7 @@ public class Car {
         return this.name;
     }
 
-    public void move(final int no) {
-        position.move(no);
+    public int move(final int no) {
+        return position.move(no);
     }
 }
